@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, TextInput, View} from 'react-native';
+import RNPickerSelect from 'react-native-picker-select';
 import colors from '../utils/colors';
 
 export default function Form() {
@@ -17,6 +18,14 @@ export default function Form() {
           style={[styles.input, styles.inputPercentage]}
         />
       </View>
+      <RNPickerSelect
+        onValueChange={(value) => console.log(value)}
+        items={[
+          {label: 'Football', value: 'football'},
+          {label: 'Baseball', value: 'baseball'},
+          {label: 'Hockey', value: 'hockey'},
+        ]}
+      />
     </View>
   );
 }
@@ -24,7 +33,7 @@ export default function Form() {
 const styles = StyleSheet.create({
   viewForm: {
     position: 'absolute',
-    bottom: -90,
+    bottom: -50,
     width: '85%',
     paddingHorizontal: 50,
     backgroundColor: colors.PRIMARY_COLOR_DARK,

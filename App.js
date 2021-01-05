@@ -3,6 +3,8 @@ import {StyleSheet, View, Text, SafeAreaView, StatusBar} from 'react-native';
 import Form from './src/components/Form';
 import colors from './src/utils/colors';
 
+
+
 export default function App() {
   return (
     <>
