@@ -23,5 +23,6 @@ const styles = StyleSheet.create({
     height: 200,
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
+    alignItems: 'center',
   },
 });
