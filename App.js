@@ -1,21 +1,43 @@
-import React from 'react';
-import {StyleSheet, View, Text, SafeAreaView, StatusBar} from 'react-native';
+import React, {useState} from 'react';
+import {
+  StyleSheet,
+  View,
+  Text,
+  SafeAreaView,
+  StatusBar,
+  Button,
+} from 'react-native';
 import Form from './src/components/Form';
 import colors from './src/utils/colors';
 
 export default function App() {
+  const [capital, setCapital] = useState(null);
+  const [interest, setInterest] = useState(null);
+  const [months, setMonths] = useState(null);
+
+  const onSubmit = () => {
+    console.log('capital ->', capital);
+    console.log('interest ->', interest);
+    console.log('months ->', months);
+  };
+
   return (
     <>
       <StatusBar barStyle="light-content" />
       <SafeAreaView style={styles.safeArea}>
         <View style={styles.background} />
         <Text style={styles.titleApp}>Cotizador de Prestamos</Text>
-        <Form />
+        <Form
+          setCapital={setCapital}
+          setInterest={setInterest}
+          setMonths={setMonths}
+        />
       </SafeAreaView>
       <View>
         <Text>Resultado</Text>
       </View>
       <View>
+        <Button title="Enviar" onPress={onSubmit}></Button>
         <Text>Calcular</Text>
       </View>
     </>
