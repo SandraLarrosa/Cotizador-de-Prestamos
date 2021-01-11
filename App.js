@@ -10,21 +10,23 @@ import {
 import Form from './src/components/Form';
 import Footer from './src/components/Footer';
 import colors from './src/utils/colors';
+import ResultCalculation from './src/components/ResultCalculation';
 
 export default function App() {
   const [capital, setCapital] = useState(null);
   const [interest, setInterest] = useState(null);
   const [months, setMonths] = useState(null);
   const [total, setTotal] = useState(null);
-  console.log(total);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const calculate = () => {
+    reset();
     if (!capital) {
-      console.log('Añade la cantidad que quieres solicitar');
+      setErrorMessage('Añade la cantidad que quieres solicitar');
     } else if (!interest) {
-      console.log('Añade el interés del prestamo');
+      setErrorMessage('Añade el interés del prestamo');
     } else if (!months) {
-      console.log('Selecciona lo meses a pagar');
+      setErrorMessage('Selecciona lo meses a pagar');
     } else {
       const i = interest / 100;
       const fee = capital / ((1 - Math.pow(i + 1, -months)) / i);
@@ -33,6 +35,11 @@ export default function App() {
         totalPayable: (fee * months).toFixed(2).replace('.', ','),
       });
     }
+  };
+
+  const reset = () => {
+    setErrorMessage('');
+    setTotal(null);
   };
 
   return (
@@ -47,9 +54,7 @@ export default function App() {
           setMonths={setMonths}
         />
       </SafeAreaView>
-      <View>
-        <Text>Resultado</Text>
-      </View>
+      <ResultCalculation errorMessage={errorMessage} />
 
       <Footer calculate={calculate} />
     </>
