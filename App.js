@@ -51,7 +51,7 @@ export default function App() {
       <StatusBar barStyle="light-content" />
       <SafeAreaView style={styles.safeArea}>
         <View style={styles.background} />
-        <Text style={styles.titleApp}>Cotizador de Prestamos</Text>
+        <Text style={styles.titleApp}>Cotizador de Préstamos</Text>
         <Form
           setCapital={setCapital}
           setInterest={setInterest}

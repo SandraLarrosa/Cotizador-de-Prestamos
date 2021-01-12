@@ -11,7 +11,7 @@ export default function ResultCalculation(props) {
         <View style={styles.boxResult}>
           <Text style={styles.title}>RESUMEN</Text>
           <DataResult title="Cantidad Solicitada:" value={`${capital} €`} />
-          <DataResult title="Interes %:" value={`${interest} %`} />
+          <DataResult title="Interés %:" value={`${interest} %`} />
           <DataResult title="Plazos:" value={`${months} `} />
           <DataResult title="Pago mensual:" value={`${total.monthlyFee} € `} />
           <DataResult
