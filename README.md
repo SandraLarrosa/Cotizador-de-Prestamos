@@ -5,7 +5,7 @@ La App calcula el importe a pagar cuando el cliente incluye la cantidad a solici
 Está hecha con el curso de udemy de "React Native: Crea aplicaciones móviles reales iOS y Android" de Agustín Navarro. 
 
 
-<img src="https://github.com/SandraLarrosa/Cotizador-de-Prestamos/blob/master/src/utils/images/InitApp.png" width=300>
+![Imagen inicial de la App](https://github.com/SandraLarrosa/Cotizador-de-Prestamos/blob/master/src/utils/images/InitApp.png)
 
 ### 💻Tecnologías utilizadas 
 
@@ -23,9 +23,9 @@ Está hecha con el curso de udemy de "React Native: Crea aplicaciones móviles r
 - Al tener el cálculo ya mostrado en pantalla y se cambia un campo, se calcula automáticamente.
 
 <div display="flex">
-    <img src="https://github.com/SandraLarrosa/Cotizador-de-Prestamos/blob/master/src/utils/images/Inputs.png" width=300>
-    <img src="https://github.com/SandraLarrosa/Cotizador-de-Prestamos/blob/master/src/utils/images/Calculate.png" width=300>
-    <img src="https://github.com/SandraLarrosa/Cotizador-de-Prestamos/blob/master/src/utils/images/Error.png" width=300>
+    <img src="https://github.com/SandraLarrosa/Cotizador-de-Prestamos/blob/master/src/utils/images/Inputs.png">
+    <img src="https://github.com/SandraLarrosa/Cotizador-de-Prestamos/blob/master/src/utils/images/Calculate.png">
+    <img src="https://github.com/SandraLarrosa/Cotizador-de-Prestamos/blob/master/src/utils/images/Error.png">
 </div>
 
 
