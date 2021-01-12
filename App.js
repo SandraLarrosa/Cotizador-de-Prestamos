@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   titleApp: {
     fontSize: 25,
     fontWeight: 'bold',
-    color: 'white',
+    color: '#25283D',
     marginTop: 15,
   },
 });

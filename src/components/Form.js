@@ -89,13 +89,9 @@ const pickerSelectStyles = StyleSheet.create({
   },
   inputAndroid: {
     fontSize: 16,
-    paddingHorizontal: 10,
-    paddingVertical: 8,
-    borderWidth: 0.5,
-    borderColor: 'grey',
-    borderRadius: 8,
     color: 'black',
-    paddingRight: 30,
     backgroundColor: '#fff',
+    marginLeft: -5,
+    marginRight: -5,
   },
 });

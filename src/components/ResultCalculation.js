@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   },
   error: {
     textAlign: 'center',
-    color: 'red',
+    color: '#25283D',
     fontWeight: 'bold',
     fontSize: 20,
   },
@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
     marginBottom: 20,
+    color: '#25283D',
   },
   value: {
     flexDirection: 'row',
@@ -69,6 +70,6 @@ const styles = StyleSheet.create({
   },
   valueResults: {
     fontSize: 16,
-    color: colors.PRIMARY_COLOR_DARK,
+    color: '#25283D',
   },
 });
