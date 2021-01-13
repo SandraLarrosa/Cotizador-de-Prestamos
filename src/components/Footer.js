@@ -3,11 +3,15 @@ import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import colors from '../utils/colors';
 
 export default function Footer(props) {
-  const {calculate} = props;
+  const {setButtonCalculate} = props;
+
+  const pressCalculate = () => {
+    setButtonCalculate(true);
+  };
 
   return (
     <View style={styles.viewFooter}>
-      <TouchableOpacity style={styles.button} onPress={calculate}>
+      <TouchableOpacity style={styles.button} onPress={pressCalculate}>
         <Text style={styles.text}>CALCULAR</Text>
       </TouchableOpacity>
     </View>

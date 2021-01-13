@@ -1,12 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-  SafeAreaView,
-  StatusBar,
-  Button,
-} from 'react-native';
+import {StyleSheet, View, Text, SafeAreaView, StatusBar} from 'react-native';
 import Form from './src/components/Form';
 import Footer from './src/components/Footer';
 import colors from './src/utils/colors';
@@ -18,26 +11,39 @@ export default function App() {
   const [months, setMonths] = useState(null);
   const [total, setTotal] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
+  const [buttonCalculate, setButtonCalculate] = useState(false);
 
   useEffect(() => {
-    capital && interest && months ? calculate() : reset();
+    if (!capital && !interest && !months) {
+      setButtonCalculate(false);
+      reset();
+    } else if (capital || interest || months) {
+      calculate();
+    }
   }, [capital, interest, months]);
 
+  useEffect(() => {
+    calculate();
+  }, [buttonCalculate]);
+
   const calculate = () => {
-    reset();
-    if (!capital) {
-      setErrorMessage('Añade la cantidad que quieres solicitar');
-    } else if (!interest) {
-      setErrorMessage('Añade el interés del prestamo');
-    } else if (!months) {
-      setErrorMessage('Selecciona lo meses a pagar');
-    } else {
-      const i = interest / 100;
-      const fee = capital / ((1 - Math.pow(i + 1, -months)) / i);
-      setTotal({
-        monthlyFee: fee.toFixed(2).replace('.', ','),
-        totalPayable: (fee * months).toFixed(2).replace('.', ','),
-      });
+    console.log(`Estado al hacer click ${buttonCalculate}`);
+    if (buttonCalculate) {
+      reset();
+      if (!capital) {
+        setErrorMessage('Añade la cantidad que quieres solicitar');
+      } else if (!interest) {
+        setErrorMessage('Añade el interés del prestamo');
+      } else if (!months) {
+        setErrorMessage('Selecciona lo meses a pagar');
+      } else {
+        const i = interest / 100;
+        const fee = capital / ((1 - Math.pow(i + 1, -months)) / i);
+        setTotal({
+          monthlyFee: fee.toFixed(2).replace('.', ','),
+          totalPayable: (fee * months).toFixed(2).replace('.', ','),
+        });
+      }
     }
   };
 
@@ -46,6 +52,7 @@ export default function App() {
     setTotal(null);
   };
 
+  console.log(`Estado inicial ${buttonCalculate}`);
   return (
     <>
       <StatusBar barStyle="light-content" />
@@ -66,7 +73,11 @@ export default function App() {
         errorMessage={errorMessage}
       />
 
-      <Footer calculate={calculate} />
+      <Footer
+        calculate={calculate}
+        setButtonCalculate={setButtonCalculate}
+        buttonCalculate={buttonCalculate}
+      />
     </>
   );
 }
