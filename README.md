@@ -5,7 +5,7 @@ La App calcula el importe a pagar cuando el cliente incluye la cantidad a solici
 Está hecha con el curso de udemy de "React Native: Crea aplicaciones móviles reales iOS y Android" de Agustín Navarro. 
 
 
-![Imagen inicial de la App](https://github.com/SandraLarrosa/Cotizador-de-Prestamos/blob/master/src/utils/images/InitApp.png)
+![Imagen inicial de la App](https://media.giphy.com/media/tkSz4Gt6BwcmneKtsu/giphy.gif)
 
 ### 💻Tecnologías utilizadas 
 
