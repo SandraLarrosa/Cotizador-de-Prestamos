@@ -1,6 +1,5 @@
 import React from 'react';
-import {ScrollView, StyleSheet, Text, View, VisualViewport} from 'react-native';
-import colors from '../utils/colors';
+import {ScrollView, StyleSheet, Text, View} from 'react-native';
 
 export default function ResultCalculation(props) {
   const {capital, interest, months, total, errorMessage} = props;
