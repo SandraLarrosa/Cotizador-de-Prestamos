@@ -12,6 +12,7 @@ export default function App() {
   const [total, setTotal] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
   const [buttonCalculate, setButtonCalculate] = useState(false);
+  const [textButton, setTextButton] = useState('CALCULAR');
 
   useEffect(() => {
     if (!capital && !interest && !months) {
@@ -24,10 +25,10 @@ export default function App() {
 
   useEffect(() => {
     calculate();
+    changeTextButton();
   }, [buttonCalculate]);
 
   const calculate = () => {
-    console.log(`Estado al hacer click ${buttonCalculate}`);
     if (buttonCalculate) {
       reset();
       if (!capital) {
@@ -52,7 +53,15 @@ export default function App() {
     setTotal(null);
   };
 
-  console.log(`Estado inicial ${buttonCalculate}`);
+  const changeTextButton = () => {
+    if (buttonCalculate) {
+      setTextButton('LIMPIAR');
+    } else {
+      reset();
+      setTextButton('CALCULAR');
+    }
+  };
+
   return (
     <>
       <StatusBar barStyle="light-content" />
@@ -74,9 +83,11 @@ export default function App() {
       />
 
       <Footer
-        calculate={calculate}
-        setButtonCalculate={setButtonCalculate}
         buttonCalculate={buttonCalculate}
+        setButtonCalculate={setButtonCalculate}
+        textButton={textButton}
+        changeTextButton={changeTextButton}
+        reset={reset}
       />
     </>
   );

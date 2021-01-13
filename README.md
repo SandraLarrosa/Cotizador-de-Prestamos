@@ -18,9 +18,9 @@ Está hecha con el curso de udemy de "React Native: Crea aplicaciones móviles r
 
 #### ✔️Funcionalidades 
 - App inicial que incluye las tres opciones del formulario para rellenar y poder hacer el cálculo del préstamo.
-- Botón para el cálculo.
+- Al pulsar el botón de "CALCULAR", se muestra en pantalla el resultado y cambia el nombre del botón por "LIMPIAR" para poder limpiar el resultado pintado por pantalla.
 - Al dejar sin rellenar cualquier campo del formulario y darle a calcular, se muestra error en cualquiera de los tres campos.
-- Al tener el cálculo ya mostrado en pantalla y se cambia un campo, se calcula automáticamente.
+- Al tener el cálculo ya mostrado en pantalla y se cambia cualquier valor de los campos del formulario, se calcula automáticamente.
 
 <div display="flex">
     <img src="https://github.com/SandraLarrosa/Cotizador-de-Prestamos/blob/master/src/utils/images/Inputs.png">
